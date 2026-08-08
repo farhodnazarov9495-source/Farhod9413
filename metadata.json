@@ -1,0 +1,11 @@
+{
+  "name": "KasbiGo Delivery",
+  "description": "KasbiGo delivery app platform with customer, courier, and admin management panels",
+  "requestFramePermissions": [
+    "geolocation",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

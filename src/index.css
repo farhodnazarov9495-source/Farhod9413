@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-brand-green: #15b33f;
+  --color-brand-orange: #f26619;
+  --color-brand-dark: #0a0f18;
+  
+  /* Harmonize emerald color palette with the bright green from the new KasbiGo logo */
+  --color-emerald-50: #f0fdf4;
+  --color-emerald-100: #dcfce7;
+  --color-emerald-200: #bbf7d0;
+  --color-emerald-500: #15b33f;
+  --color-emerald-600: #109331;
+  --color-emerald-700: #0d7526;
+  --color-emerald-800: #0a581d;
+  --color-emerald-900: #084316;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--theme-bg) !important;
+  color: var(--theme-text) !important;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* ========================================================= */
+/* 1. LIGHT MODE THEME VARIABLES (DEFAULT)                   */
+/* ========================================================= */
+:root {
+  --theme-bg: #FFFFFF;
+  --theme-card: #FFFFFF;
+  --theme-sidebar: #FFFFFF;
+  --theme-header: #FFFFFF;
+  --theme-modal: #FFFFFF;
+  --theme-input: #FFFFFF;
+  --theme-border: #E5E7EB;
+  --theme-text: #111827;
+  --theme-text-secondary: #6B7280;
+}
+
+/* ========================================================= */
+/* 2. DARK MODE THEME VARIABLES                              */
+/* ========================================================= */
+.dark {
+  --theme-bg: #0B1220;
+  --theme-card: #111827;
+  --theme-sidebar: #0F172A;
+  --theme-header: #111827;
+  --theme-modal: #1E293B;
+  --theme-input: #1F2937;
+  --theme-border: #374151;
+  --theme-text: #FFFFFF;
+  --theme-text-secondary: #CBD5E1;
+}
+
+/* ========================================================= */
+/* 3. DARK MODE CLASS OVERRIDES FOR STANDARD INTERFACES     */
+/* ========================================================= */
+html.dark {
+  /* Background Overrides */
+  .bg-white {
+    background-color: #111827 !important;
+  }
+  .bg-slate-50 {
+    background-color: #0B1220 !important;
+  }
+  .bg-slate-100 {
+    background-color: #1F2937 !important;
+  }
+  .bg-slate-200 {
+    background-color: #374151 !important;
+  }
+  .bg-slate-100\/50, .bg-slate-50\/50, .bg-slate-50\/30 {
+    background-color: #111827 !important;
+  }
+  .bg-slate-50\/10, .bg-slate-100\/10 {
+    background-color: rgba(255, 255, 255, 0.03) !important;
+  }
+  
+  /* Borders */
+  .border-slate-100, .border-slate-200, .border-slate-300\/20, .border-slate-150 {
+    border-color: #374151 !important;
+  }
+  
+  /* Text Colors */
+  .text-slate-800, .text-slate-900, .text-slate-700 {
+    color: #FFFFFF !important;
+  }
+  .text-slate-400, .text-slate-500, .text-slate-600 {
+    color: #CBD5E1 !important;
+  }
+  
+  /* Table row odd */
+  .odd\:bg-slate-50\/30:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.02) !important;
+  }
+  
+  /* Inputs, selects, textareas */
+  input, select, textarea {
+    background-color: #1F2937 !important;
+    border-color: #374151 !important;
+    color: #FFFFFF !important;
+  }
+  
+  /* Modal windows / dialog overlay */
+  .bg-slate-950\/65 {
+    background-color: rgba(0, 0, 0, 0.75) !important;
+  }
+  
+  /* Card shadows */
+  .shadow-xl, .shadow-2xl {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3) !important;
+  }
+}
+
+/* ========================================================= */
+/* 4. LIGHT MODE CLASS OVERRIDES FOR HARDCODED ADMIN STYLES */
+/* ========================================================= */
+html:not(.dark) {
+  /* Replace dark blues with crisp whites and light slates */
+  .bg-\[\#0F172A\] {
+    background-color: #FFFFFF !important;
+  }
+  .bg-\[\#090D1A\] {
+    background-color: #F8FAFC !important;
+  }
+  .bg-slate-900, .bg-slate-950 {
+    background-color: #FFFFFF !important;
+  }
+  .bg-slate-800 {
+    background-color: #F1F5F9 !important;
+  }
+  
+  /* Hover & focus states */
+  .hover\:bg-slate-700:hover {
+    background-color: #E2E8F0 !important;
+  }
+  .hover\:bg-slate-800:hover {
+    background-color: #E2E8F0 !important;
+  }
+  
+  /* Borders */
+  .border-slate-800, .border-slate-850 {
+    border-color: #E5E7EB !important;
+  }
+  
+  /* Text colors */
+  .text-slate-200, .text-slate-300, .text-slate-100, .text-white {
+    color: #111827 !important;
+  }
+  .text-slate-400, .text-slate-500, .text-slate-600 {
+    color: #6B7280 !important;
+  }
+  
+  /* Maintain active accent & brand state visibility */
+  .text-emerald-400 {
+    color: #109331 !important;
+  }
+  .text-emerald-500 {
+    color: #15b33f !important;
+  }
+  
+  /* Super Admin Sidebar button text hover fix in light mode */
+  .hover\:text-white:hover {
+    color: #111827 !important;
+  }
+  
+  /* Specific override for map text if hardcoded to white */
+  .text-slate-200.font-black {
+    color: #111827 !important;
+  }
+}
+
+
+/* Custom sleek scrollbars */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ========================================================= */
+/* 5. ULTRA PRO DIAGONAL SPLASH & SHIMMER ANIMATIONS        */
+/* ========================================================= */
+@keyframes diagonalSplashMove {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@keyframes rotateSplashBorder {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shinyShimmerSweep {
+  0% {
+    transform: translateX(-180%) skewX(-25deg);
+  }
+  50% {
+    transform: translateX(280%) skewX(-25deg);
+  }
+  100% {
+    transform: translateX(280%) skewX(-25deg);
+  }
+}
+
+.ultra-header-splash {
+  background: linear-gradient(135deg, #047857 0%, #059669 18%, #f97316 45%, #7c3aed 75%, #059669 100%);
+  background-size: 300% 300%;
+  animation: diagonalSplashMove 14s ease-in-out infinite;
+}
+
+.ultra-card-border-splash {
+  background: conic-gradient(from 0deg, #10b981, #f97316, #a855f7, #ec4899, #10b981);
+  animation: rotateSplashBorder 12s linear infinite;
+}
+
+.ultra-shimmer-sweep {
+  animation: shinyShimmerSweep 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
