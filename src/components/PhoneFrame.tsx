@@ -1311,44 +1311,51 @@ export const PhoneFrame: React.FC<PhoneFrameProps> = ({
         </AnimatePresence>
 
         {/* Persistent Brand Header */}
-        <div className="relative overflow-hidden px-3.5 py-3.5 pt-[calc(0.85rem+env(safe-area-inset-top))] flex items-center justify-between shadow-2xl z-40 shrink-0 select-none border-b border-white/50 ultra-header-splash">
+        <div className="relative overflow-hidden px-4 py-3.5 pt-[calc(0.85rem+env(safe-area-inset-top))] flex items-center justify-between shadow-2xl z-40 shrink-0 select-none border-b border-white/50 ultra-header-splash">
           {/* Top Glass 3D Gloss Reflection */}
           <div className="absolute inset-x-0 top-0 h-[50%] bg-gradient-to-b from-white/50 via-white/20 to-transparent pointer-events-none z-10" />
           
           {/* Moving diagonal shimmer highlight sweep */}
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent ultra-shimmer-sweep pointer-events-none z-10" />
 
-          <div className="relative z-20 flex items-center gap-3">
-            <KasbiGoLogo className="h-[54px] w-[54px] sm:h-16 sm:w-16 filter drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]" />
+          {/* CHAP ZONA: Logotip + Vertikal matn */}
+          <div className="relative z-20 flex items-center space-x-3">
+            <KasbiGoLogo className="h-12 w-12 shrink-0 filter drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]" />
             <div className="flex flex-col justify-center">
-              <div className="flex items-center space-x-1.5">
-                <span className="font-mono text-[9.5px] sm:text-[10px] text-white font-black uppercase tracking-widest leading-none block drop-shadow-[0_1.5px_3px_rgba(0,0,0,0.85)]">
-                  YETKAZISH XIZMATI
-                </span>
-              </div>
-              <div className="flex items-center space-x-2 mt-1">
-                <h2 className="text-sm sm:text-base font-black italic tracking-tighter leading-none bg-gradient-to-r from-yellow-100 via-amber-200 to-yellow-300 bg-clip-text text-transparent drop-shadow-[0_2px_5px_rgba(0,0,0,0.95)]">
-                  Kasbi Go
-                </h2>
-                <div className="inline-flex items-center space-x-1 bg-gradient-to-r from-amber-500 via-orange-500 to-red-600 border border-white px-2 py-0.5 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.35)]">
-                  <span className="h-1.5 w-1.5 rounded-full bg-yellow-200 animate-ping shrink-0" />
-                  <span className="text-[10.5px] text-white font-black italic tracking-wider uppercase drop-shadow-xs">24/7</span>
-                </div>
-              </div>
+              <span className="text-[9px] font-black uppercase tracking-wider text-emerald-200 opacity-90 leading-tight block drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+                YETKAZISH XIZMATI
+              </span>
+              <h2 className="text-base font-black italic tracking-tight leading-none text-amber-200 drop-shadow-[0_2px_5px_rgba(0,0,0,0.95)] whitespace-nowrap mt-0.5">
+                Kasbi Go 24/7
+              </h2>
             </div>
           </div>
+
+          {/* O'NG ZONA: Status ko'rsatkichi + Rejim almashtirgich */}
           <div className="relative z-20 flex items-center space-x-2">
+            {/* Status Indicator (FAOL) */}
+            <div className="inline-flex items-center space-x-1.5 bg-black/25 backdrop-blur-xs border border-white/30 px-2.5 py-1 rounded-full shadow-md shrink-0">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+              </span>
+              <span className="text-[10px] text-white font-black italic tracking-wider uppercase drop-shadow-xs whitespace-nowrap">
+                FAOL
+              </span>
+            </div>
+
             {/* Theme Toggle Button */}
             {setTheme && (
               <button
+                type="button"
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                className="h-8 w-8 rounded-full hover:bg-white/20 text-white transition-all cursor-pointer flex items-center justify-center active:scale-90 hover:scale-110"
+                className="h-8 w-8 rounded-full bg-black/20 hover:bg-black/35 border border-white/30 text-white transition-all cursor-pointer flex items-center justify-center active:scale-90 hover:scale-105 shadow-md shrink-0"
                 title={theme === 'dark' ? "Kunduzgi rejim" : "Tungi rejim"}
               >
                 {theme === 'dark' ? (
-                  <span className="text-base leading-none filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">☀️</span>
+                  <span className="text-sm leading-none filter drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">☀️</span>
                 ) : (
-                  <span className="text-base leading-none filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">🌙</span>
+                  <span className="text-sm leading-none filter drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">🌙</span>
                 )}
               </button>
             )}
@@ -1517,10 +1524,10 @@ export const PhoneFrame: React.FC<PhoneFrameProps> = ({
                             ✍️
                           </div>
                           <div className="overflow-hidden">
-                            <span className="text-[11.5px] font-black tracking-tight uppercase text-yellow-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)] block leading-tight truncate">
+                            <span className="text-[10px] font-black tracking-tight uppercase text-yellow-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)] block leading-tight truncate">
                               {convertScript("YOZMA BUYURTMA", scriptMode)}
                             </span>
-                            <p className="text-[8.5px] text-white font-black leading-tight mt-0.5 truncate drop-shadow-[0_1.5px_2px_rgba(0,0,0,0.9)] opacity-100">
+                            <p className="text-[8px] text-white font-black leading-tight mt-0.5 truncate drop-shadow-[0_1.5px_2px_rgba(0,0,0,0.9)] opacity-100">
                               {convertScript("Matnli xabar yuborish", scriptMode)}
                             </p>
                           </div>
@@ -1549,10 +1556,10 @@ export const PhoneFrame: React.FC<PhoneFrameProps> = ({
                             🎙️
                           </div>
                           <div className="overflow-hidden">
-                            <span className="text-[11.5px] font-black tracking-tight uppercase text-yellow-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)] block leading-tight truncate">
+                            <span className="text-[10px] font-black tracking-tight uppercase text-yellow-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)] block leading-tight truncate">
                               {convertScript("OVOZLI BUYURTMA", scriptMode)}
                             </span>
-                            <p className="text-[8.5px] text-white font-black leading-tight mt-0.5 truncate drop-shadow-[0_1.5px_2px_rgba(0,0,0,0.9)] opacity-100">
+                            <p className="text-[8px] text-white font-black leading-tight mt-0.5 truncate drop-shadow-[0_1.5px_2px_rgba(0,0,0,0.9)] opacity-100">
                               {convertScript("Ovozli xabar yuborish", scriptMode)}
                             </p>
                           </div>
@@ -1917,7 +1924,7 @@ export const PhoneFrame: React.FC<PhoneFrameProps> = ({
                             <div className="p-3 space-y-1 flex-1 flex flex-col justify-between">
                               <div>
                                 <p className="text-xs font-bold text-slate-800 dark:text-slate-100 truncate">{product.name}</p>
-                                <p className="text-xs font-black bg-gradient-to-r from-emerald-600 to-green-600 dark:from-emerald-400 dark:to-green-400 bg-clip-text text-transparent mt-0.5">{formatPrice(product.price)}</p>
+                                <p className="text-xs font-black text-emerald-600 dark:text-emerald-400 mt-0.5">{formatPrice(product.price)}</p>
                               </div>
 
                               <div className="mt-2">
@@ -2548,7 +2555,8 @@ export const PhoneFrame: React.FC<PhoneFrameProps> = ({
                       mandatoryOnlineCategories,
                       activeCartTotal,
                       cashlessLimit,
-                      adminPhone
+                      adminPhone,
+                      [draftOrder?.category, activeStore?.category]
                     );
                     if (mandatoryOnlineInfo.isMandatory) {
                       return (
@@ -2660,54 +2668,27 @@ export const PhoneFrame: React.FC<PhoneFrameProps> = ({
                   <div className="space-y-2">
                     <span className="text-[10px] font-black text-slate-400 uppercase tracking-wider block">To'lov usulini tanlang:</span>
                     
-                    {(() => {
-                      const isVoiceOrTextOrder = Boolean(
-                        (draftOrder && (draftOrder.type === 'voice' || draftOrder.orderChannel === 'voice' || draftOrder.items?.some(i => i.product?.voiceUrl || i.product?.id.startsWith('custom-')))) ||
-                        cart.some(i => i.product.voiceUrl || i.product.id.startsWith('custom-'))
-                      );
-                      const currentTotal = draftOrder ? draftOrder.total : getCartTotal();
-                      const isOverLimit = cashlessLimit > 0 && currentTotal > cashlessLimit;
-
-                      const mandatoryOnlineInfo = getMandatoryOnlineReason(
-                        cart,
-                        STORES,
-                        mandatoryOnlineCategories,
-                        currentTotal,
-                        cashlessLimit,
-                        adminPhone
-                      );
-                      const isCashAllowedForCheckout = !mandatoryOnlineInfo.isMandatory && !isBlacklisted && !isOverLimit;
-
-                      if (!isCashAllowedForCheckout && paymentMethod === 'Naqd') {
-                        setTimeout(() => setPaymentMethod('Online'), 0);
-                      }
-
-                      if (!isCashAllowedForCheckout) {
-                        return null;
-                      }
-
-                      return (
-                        /* CASH OPTION BUTTON */
-                        <button
-                          type="button"
-                          onClick={() => setPaymentMethod('Naqd')}
-                          className={`w-full flex items-center justify-between p-3.5 rounded-xl border text-left transition-all ${
-                            paymentMethod === 'Naqd'
-                              ? 'border-emerald-500 bg-emerald-50/20'
-                              : 'border-slate-200 bg-white hover:bg-slate-50'
-                          }`}
-                        >
-                          <div className="flex items-center space-x-2.5">
-                            <span className="text-lg">💵</span>
-                            <div>
-                              <span className="text-xs font-bold text-slate-800 block">Eshik oldida naqd to'lash</span>
-                              <span className="text-[9px] text-slate-400">Kuryerga yetkazilgan vaqtda beriladi</span>
-                            </div>
+                    {/* CASH OPTION BUTTON */}
+                    {isCashAllowedForCheckout && (
+                      <button
+                        type="button"
+                        onClick={() => setPaymentMethod('Naqd')}
+                        className={`w-full flex items-center justify-between p-3.5 rounded-xl border text-left transition-all ${
+                          paymentMethod === 'Naqd'
+                            ? 'border-emerald-500 bg-emerald-50/20'
+                            : 'border-slate-200 bg-white hover:bg-slate-50'
+                        }`}
+                      >
+                        <div className="flex items-center space-x-2.5">
+                          <span className="text-lg">💵</span>
+                          <div>
+                            <span className="text-xs font-bold text-slate-800 block">Eshik oldida naqd to'lash</span>
+                            <span className="text-[9px] text-slate-400">Kuryerga yetkazilgan vaqtda beriladi</span>
                           </div>
-                          {paymentMethod === 'Naqd' && <CheckCircle className="h-4 w-4 text-emerald-600" />}
-                        </button>
-                      );
-                    })()}
+                        </div>
+                        {paymentMethod === 'Naqd' && <CheckCircle className="h-4 w-4 text-emerald-600" />}
+                      </button>
+                    )}
 
                     {/* ONLINE TRANSFER OPTION BUTTON */}
                     <button
