@@ -1311,7 +1311,7 @@ export const PhoneFrame: React.FC<PhoneFrameProps> = ({
         </AnimatePresence>
 
         {/* Persistent Brand Header */}
-        <div className="relative overflow-hidden px-4 py-3.5 pt-[calc(0.85rem+env(safe-area-inset-top))] flex items-center justify-between shadow-2xl z-40 shrink-0 select-none border-b border-white/50 ultra-header-splash">
+        <div className="relative overflow-hidden px-4 py-3.5 pt-[calc(0.85rem+env(safe-area-inset-top))] flex items-center justify-between shadow-2xl z-40 shrink-0 select-none border border-white/50 rounded-[28px] my-1 ultra-header-splash">
           {/* Top Glass 3D Gloss Reflection */}
           <div className="absolute inset-x-0 top-0 h-[50%] bg-gradient-to-b from-white/50 via-white/20 to-transparent pointer-events-none z-10" />
           
@@ -1495,7 +1495,7 @@ export const PhoneFrame: React.FC<PhoneFrameProps> = ({
                     </AnimatePresence>
                   </div>
                                 {/* Custom Order Methods: Side-by-Side Ultra Pro Splash Cards */}
-                  <div className="grid grid-cols-2 gap-3 select-none">
+                  <div className="grid grid-cols-2 gap-2.5 items-stretch select-none">
                     {/* Manual Custom Order Button Card */}
                     <div 
                       onClick={() => {
@@ -1506,7 +1506,7 @@ export const PhoneFrame: React.FC<PhoneFrameProps> = ({
                         }
                         setShowCustomOrderModal(true);
                       }}
-                      className="relative rounded-2xl p-[1.5px] overflow-hidden shadow-xl hover:shadow-2xl hover:scale-[1.03] cursor-pointer transition-all duration-300 h-[66px] group"
+                      className="relative rounded-2xl p-[1.5px] overflow-hidden shadow-xl hover:shadow-2xl hover:scale-[1.02] cursor-pointer transition-all duration-300 min-h-[68px] h-full group flex"
                     >
                       {/* Rotating Splash Border Background */}
                       <div className="absolute -inset-[180%] ultra-card-border-splash opacity-95 group-hover:opacity-100" />
@@ -1515,19 +1515,19 @@ export const PhoneFrame: React.FC<PhoneFrameProps> = ({
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/45 to-transparent ultra-shimmer-sweep pointer-events-none z-20" />
 
                       {/* Inner Card Body with Sharp Saturated Gradient & 3D Top Reflection */}
-                      <div className="relative z-10 w-full h-full bg-gradient-to-br from-emerald-500 via-teal-600 to-cyan-700 rounded-[14px] p-2.5 flex items-center text-white overflow-hidden shadow-[inset_0_2.5px_4px_rgba(255,255,255,0.9),0_8px_24px_rgba(16,185,129,0.6)] border border-emerald-300/80">
+                      <div className="relative z-10 w-full h-full bg-gradient-to-br from-emerald-500 via-teal-600 to-cyan-700 rounded-[14px] p-2.5 flex items-center text-white shadow-[inset_0_2.5px_4px_rgba(255,255,255,0.9),0_8px_24px_rgba(16,185,129,0.6)] border border-emerald-300/80">
                         {/* 3D Glass Gloss Reflection Overlay */}
                         <div className="absolute inset-x-0 top-0 h-[50%] bg-gradient-to-b from-white/60 via-white/20 to-transparent pointer-events-none rounded-t-[14px]" />
 
-                        <div className="flex items-center space-x-2.5 relative z-10 w-full">
-                          <div className="flex items-center justify-center h-9 w-9 rounded-xl bg-slate-950/40 border-2 border-amber-300/90 text-white text-xl font-black shadow-xl backdrop-blur-xs shrink-0 transform group-hover:scale-110 transition-transform">
+                        <div className="flex items-center space-x-2 relative z-10 w-full">
+                          <div className="flex items-center justify-center h-8 w-8 rounded-xl bg-slate-950/40 border-2 border-amber-300/90 text-white text-lg font-black shadow-xl backdrop-blur-xs shrink-0 transform group-hover:scale-110 transition-transform">
                             ✍️
                           </div>
-                          <div className="overflow-hidden">
-                            <span className="text-[10px] font-black tracking-tight uppercase text-yellow-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)] block leading-tight truncate">
+                          <div className="min-w-0 flex-1">
+                            <span className="text-[10px] font-black tracking-tight uppercase text-yellow-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)] block leading-tight">
                               {convertScript("YOZMA BUYURTMA", scriptMode)}
                             </span>
-                            <p className="text-[8px] text-white font-black leading-tight mt-0.5 truncate drop-shadow-[0_1.5px_2px_rgba(0,0,0,0.9)] opacity-100">
+                            <p className="text-[8.5px] text-white font-black leading-tight mt-0.5 drop-shadow-[0_1.5px_2px_rgba(0,0,0,0.9)] opacity-100">
                               {convertScript("Matnli xabar yuborish", scriptMode)}
                             </p>
                           </div>
@@ -1538,7 +1538,7 @@ export const PhoneFrame: React.FC<PhoneFrameProps> = ({
                     {/* Voice Custom Order Button Card */}
                     <div 
                       onClick={() => setShowVoiceOrderModal(true)}
-                      className="relative rounded-2xl p-[1.5px] overflow-hidden shadow-xl hover:shadow-2xl hover:scale-[1.03] cursor-pointer transition-all duration-300 h-[66px] group"
+                      className="relative rounded-2xl p-[1.5px] overflow-hidden shadow-xl hover:shadow-2xl hover:scale-[1.02] cursor-pointer transition-all duration-300 min-h-[68px] h-full group flex"
                     >
                       {/* Rotating Splash Border Background */}
                       <div className="absolute -inset-[180%] ultra-card-border-splash opacity-95 group-hover:opacity-100" />
@@ -1547,19 +1547,19 @@ export const PhoneFrame: React.FC<PhoneFrameProps> = ({
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/45 to-transparent ultra-shimmer-sweep pointer-events-none z-20" />
 
                       {/* Inner Card Body with Sharp Saturated Gradient & 3D Top Reflection */}
-                      <div className="relative z-10 w-full h-full bg-gradient-to-br from-fuchsia-600 via-rose-500 to-indigo-700 rounded-[14px] p-2.5 flex items-center text-white overflow-hidden shadow-[inset_0_2.5px_4px_rgba(255,255,255,0.9),0_8px_24px_rgba(217,70,239,0.6)] border border-pink-300/80">
+                      <div className="relative z-10 w-full h-full bg-gradient-to-br from-fuchsia-600 via-rose-500 to-indigo-700 rounded-[14px] p-2.5 flex items-center text-white shadow-[inset_0_2.5px_4px_rgba(255,255,255,0.9),0_8px_24px_rgba(217,70,239,0.6)] border border-pink-300/80">
                         {/* 3D Glass Gloss Reflection Overlay */}
                         <div className="absolute inset-x-0 top-0 h-[50%] bg-gradient-to-b from-white/60 via-white/20 to-transparent pointer-events-none rounded-t-[14px]" />
 
-                        <div className="flex items-center space-x-2.5 relative z-10 w-full">
-                          <div className="flex items-center justify-center h-9 w-9 rounded-xl bg-slate-950/40 border-2 border-amber-300/90 text-white text-xl font-black shadow-xl backdrop-blur-xs shrink-0 transform group-hover:scale-110 transition-transform">
+                        <div className="flex items-center space-x-2 relative z-10 w-full">
+                          <div className="flex items-center justify-center h-8 w-8 rounded-xl bg-slate-950/40 border-2 border-amber-300/90 text-white text-lg font-black shadow-xl backdrop-blur-xs shrink-0 transform group-hover:scale-110 transition-transform">
                             🎙️
                           </div>
-                          <div className="overflow-hidden">
-                            <span className="text-[10px] font-black tracking-tight uppercase text-yellow-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)] block leading-tight truncate">
+                          <div className="min-w-0 flex-1">
+                            <span className="text-[10px] font-black tracking-tight uppercase text-yellow-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)] block leading-tight">
                               {convertScript("OVOZLI BUYURTMA", scriptMode)}
                             </span>
-                            <p className="text-[8px] text-white font-black leading-tight mt-0.5 truncate drop-shadow-[0_1.5px_2px_rgba(0,0,0,0.9)] opacity-100">
+                            <p className="text-[8.5px] text-white font-black leading-tight mt-0.5 drop-shadow-[0_1.5px_2px_rgba(0,0,0,0.9)] opacity-100">
                               {convertScript("Ovozli xabar yuborish", scriptMode)}
                             </p>
                           </div>
