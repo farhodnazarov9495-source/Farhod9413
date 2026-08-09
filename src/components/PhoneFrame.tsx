@@ -1311,60 +1311,34 @@ export const PhoneFrame: React.FC<PhoneFrameProps> = ({
         </AnimatePresence>
 
         {/* Persistent Brand Header */}
-        <div className="relative overflow-hidden px-3.5 py-3.5 pt-[calc(0.85rem+env(safe-area-inset-top))] flex items-center justify-between shadow-2xl z-40 shrink-0 select-none border-b border-amber-300/40 ultra-header-splash">
+        <div className="relative overflow-hidden px-3.5 py-3.5 pt-[calc(0.85rem+env(safe-area-inset-top))] flex items-center justify-between shadow-2xl z-40 shrink-0 select-none border-b border-white/50 ultra-header-splash">
+          {/* Top Glass 3D Gloss Reflection */}
+          <div className="absolute inset-x-0 top-0 h-[50%] bg-gradient-to-b from-white/50 via-white/20 to-transparent pointer-events-none z-10" />
+          
           {/* Moving diagonal shimmer highlight sweep */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent ultra-shimmer-sweep pointer-events-none" />
-          <div className="absolute inset-0 bg-black/15 backdrop-blur-[0.5px] pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent ultra-shimmer-sweep pointer-events-none z-10" />
 
-          <div className="relative z-10 flex items-center gap-3">
-            <KasbiGoLogo className="h-[54px] w-[54px] sm:h-16 sm:w-16" />
+          <div className="relative z-20 flex items-center gap-3">
+            <KasbiGoLogo className="h-[54px] w-[54px] sm:h-16 sm:w-16 filter drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]" />
             <div className="flex flex-col justify-center">
               <div className="flex items-center space-x-1.5">
-                <span className="font-mono text-[9.5px] sm:text-[10px] text-emerald-100 font-black uppercase tracking-widest leading-none block drop-shadow-xs">
-                  {scriptMode === 'cyrillic' ? 'ЕТКАЗИШ ХИЗМАТИ' : 'YETKAZISH XIZMATI'}
+                <span className="font-mono text-[9.5px] sm:text-[10px] text-white font-black uppercase tracking-widest leading-none block drop-shadow-[0_1.5px_3px_rgba(0,0,0,0.85)]">
+                  YETKAZISH XIZMATI
                 </span>
               </div>
               <div className="flex items-center space-x-2 mt-1">
-                <h2 className="text-sm sm:text-base font-black italic tracking-tighter leading-none bg-gradient-to-r from-yellow-300 via-amber-200 to-yellow-400 bg-clip-text text-transparent drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)]">
-                  {scriptMode === 'cyrillic' ? 'Касби Go' : 'Kasbi Go'}
+                <h2 className="text-sm sm:text-base font-black italic tracking-tighter leading-none bg-gradient-to-r from-yellow-100 via-amber-200 to-yellow-300 bg-clip-text text-transparent drop-shadow-[0_2px_5px_rgba(0,0,0,0.95)]">
+                  Kasbi Go
                 </h2>
-                <div className="inline-flex items-center space-x-1 bg-gradient-to-r from-amber-500 via-orange-500 to-red-600 border border-amber-200 px-2 py-0.5 rounded-full shadow-[0_2px_6px_rgba(245,158,11,0.6)]">
+                <div className="inline-flex items-center space-x-1 bg-gradient-to-r from-amber-500 via-orange-500 to-red-600 border border-white px-2 py-0.5 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.35)]">
                   <span className="h-1.5 w-1.5 rounded-full bg-yellow-200 animate-ping shrink-0" />
                   <span className="text-[10.5px] text-white font-black italic tracking-wider uppercase drop-shadow-xs">24/7</span>
                 </div>
               </div>
             </div>
           </div>
-          <div className="relative z-10 flex items-center space-x-2">
-            {/* Language Toggle (O'z / Ўз) - Completely transparent background */}
-            <div className="flex items-center space-x-1 text-xs font-black">
-              <button
-                type="button"
-                onClick={() => toggleScriptMode('latin')}
-                className={`px-2.5 py-1 rounded-full transition-all cursor-pointer text-xs font-black ${
-                  scriptMode === 'latin'
-                    ? 'bg-gradient-to-r from-amber-300 via-yellow-300 to-amber-400 text-slate-950 shadow-lg scale-105 ring-1 ring-amber-200/80'
-                    : 'text-white hover:text-amber-200 font-extrabold'
-                }`}
-                title="Lotin yozuvi (O'zbekcha)"
-              >
-                O'z
-              </button>
-              <button
-                type="button"
-                onClick={() => toggleScriptMode('cyrillic')}
-                className={`px-2.5 py-1 rounded-full transition-all cursor-pointer text-xs font-black ${
-                  scriptMode === 'cyrillic'
-                    ? 'bg-gradient-to-r from-amber-300 via-yellow-300 to-amber-400 text-slate-950 shadow-lg scale-105 ring-1 ring-amber-200/80'
-                    : 'text-white hover:text-amber-200 font-extrabold'
-                }`}
-                title="Кирилл ёзуви (Ўзбекча)"
-              >
-                Ўз
-              </button>
-            </div>
-
-            {/* Theme Toggle Button - Completely transparent background */}
+          <div className="relative z-20 flex items-center space-x-2">
+            {/* Theme Toggle Button */}
             {setTheme && (
               <button
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}

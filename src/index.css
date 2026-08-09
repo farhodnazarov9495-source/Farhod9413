@@ -228,9 +228,9 @@ html:not(.dark) {
 }
 
 .ultra-header-splash {
-  background: linear-gradient(135deg, #047857 0%, #059669 18%, #f97316 45%, #7c3aed 75%, #059669 100%);
+  background: linear-gradient(120deg, #10b981 0%, #34d399 18%, #38bdf8 38%, #fbbf24 60%, #f97316 82%, #ec4899 95%, #10b981 100%);
   background-size: 300% 300%;
-  animation: diagonalSplashMove 14s ease-in-out infinite;
+  animation: diagonalSplashMove 10s ease-in-out infinite;
 }
 
 .ultra-card-border-splash {
